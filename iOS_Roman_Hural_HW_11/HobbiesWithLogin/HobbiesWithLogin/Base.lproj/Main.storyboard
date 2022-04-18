@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2W7-Jf-p25">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Log In View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="logInViewController" customModule="HobbiesWithLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o7G-Dc-xzh">
+                                <rect key="frame" x="62" y="327" width="266" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="edChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="4Zj-df-h32"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUY-92-WRR">
+                                <rect key="frame" x="62" y="389" width="266" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="passwordEditing:" destination="BYZ-38-t0r" eventType="editingChanged" id="H6N-Q1-YrV"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e2e-za-ykK">
+                                <rect key="frame" x="134" y="447" width="121" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log In"/>
+                                <connections>
+                                    <segue destination="cEM-EX-PL1" kind="show" id="BJX-qv-M0i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sFy-KY-dSF">
+                                <rect key="frame" x="16" y="495" width="174" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forgot Username?"/>
+                                <connections>
+                                    <action selector="forgotUserNamePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tHd-D3-NgQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXG-b5-rpf">
+                                <rect key="frame" x="207" y="495" width="167" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Forgot Password?"/>
+                                <connections>
+                                    <action selector="forgotPassWordPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CRk-fQ-NPs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="17u-ot-nmP"/>
+                    <connections>
+                        <outlet property="forgotPassWordButton" destination="dXG-b5-rpf" id="5ht-Xd-dr9"/>
+                        <outlet property="forgotUserNameButton" destination="sFy-KY-dSF" id="YhM-LY-5IL"/>
+                        <outlet property="logInButton" destination="e2e-za-ykK" id="zbL-yn-Sr4"/>
+                        <outlet property="passwordTextField" destination="cUY-92-WRR" id="5mv-LT-cai"/>
+                        <outlet property="usernameTextField" destination="o7G-Dc-xzh" id="Teo-l6-P7l"/>
+                        <segue destination="fC5-9I-OQt" kind="show" identifier="forgottenUsernameOrPassword" id="EEc-SC-Jrz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="995" y="53"/>
+        </scene>
+        <!--Forgot Name Password View Controller-->
+        <scene sceneID="Vqw-68-JXI">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="fC5-9I-OQt" customClass="forgotNamePasswordViewController" customModule="HobbiesWithLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TXZ-dx-aEa">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cDM-wf-bOd"/>
+                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="xci-uG-60H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wc3-vu-CqV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="-114"/>
+        </scene>
+        <!--Images View Controller-->
+        <scene sceneID="KaP-mb-ONP">
+            <objects>
+                <viewController id="cEM-EX-PL1" customClass="imagesViewController" customModule="HobbiesWithLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zIa-fC-sPr">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="football" translatesAutoresizingMaskIntoConstraints="NO" id="6gX-VO-8Ok">
+                                <rect key="frame" x="75" y="320" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZgL-TT-0B0" appends="YES" id="9ty-xu-PCR"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tennis" translatesAutoresizingMaskIntoConstraints="NO" id="xst-RJ-j11">
+                                <rect key="frame" x="75" y="557" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="bIj-p9-3MK" appends="YES" id="UBN-Ke-His"/>
+                                </connections>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="basketball" translatesAutoresizingMaskIntoConstraints="NO" id="Hr6-uH-KPT">
+                                <rect key="frame" x="75" y="106" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="uJm-di-z6v" appends="YES" id="vrT-OQ-1qk"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9l2-dL-mfZ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2cB-X7-erV"/>
+                    <connections>
+                        <outlet property="basketballImage" destination="Hr6-uH-KPT" id="wqJ-jG-bQG"/>
+                        <outlet property="footballImage" destination="6gX-VO-8Ok" id="3id-MD-g3x"/>
+                        <outlet property="tennisImage" destination="xst-RJ-j11" id="qZ0-Ph-mNK"/>
+                        <segue destination="loG-Cd-h1x" kind="show" identifier="imagesSB" id="cC1-dO-qVp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M7f-hd-CPt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="uJm-di-z6v">
+                    <connections>
+                        <action selector="basketballImageTapped:" destination="cEM-EX-PL1" id="E8S-Ef-gcf"/>
+                        <segue destination="loG-Cd-h1x" kind="show" identifier="basketballImage" id="g5p-oB-ZsD"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZgL-TT-0B0">
+                    <connections>
+                        <action selector="footballImageTapped:" destination="cEM-EX-PL1" id="q91-V8-0kg"/>
+                        <segue destination="loG-Cd-h1x" kind="show" identifier="footballImage" id="LEa-Fs-LoX"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="bIj-p9-3MK">
+                    <connections>
+                        <action selector="tennisImageTapped:" destination="cEM-EX-PL1" id="xkx-5l-871"/>
+                        <segue destination="loG-Cd-h1x" kind="show" identifier="tennisImage" id="Cip-xM-PVe"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="2004.6153846153845" y="534.59715639810429"/>
+        </scene>
+        <!--Full Screen View Controller-->
+        <scene sceneID="B9f-CO-scS">
+            <objects>
+                <viewController id="loG-Cd-h1x" customClass="fullScreenViewController" customModule="HobbiesWithLogin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ncB-JV-24z">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RbY-81-fS5">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i9x-hZ-3pe"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="su1-zB-h5o"/>
+                    <connections>
+                        <outlet property="fullScreenImage" destination="RbY-81-fS5" id="cVl-0q-V0r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OWa-Md-mkT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2829.2307692307691" y="534.59715639810429"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DXN-mf-ddK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2W7-Jf-p25" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="Z9o-vi-yTV">
+                        <rect key="frame" x="0.0" y="44" width="390" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gr9-fM-QzV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ydU-y0-v4I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="27.69230769230769" y="53.317535545023695"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="g5p-oB-ZsD"/>
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="basketball" width="1000" height="1080"/>
+        <image name="football" width="225" height="225"/>
+        <image name="tennis" width="880" height="880"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
